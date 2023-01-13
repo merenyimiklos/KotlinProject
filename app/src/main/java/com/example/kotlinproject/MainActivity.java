@@ -8,7 +8,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button javaGomb;
+    private Button javaGomb;
+    private Button kotlinGomb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +25,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+        kotlinGomb.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, KotlinActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void init() {
         javaGomb = findViewById(R.id.javaGomb);
+        kotlinGomb = findViewById(R.id.kotlinGomb);
     }
 }
